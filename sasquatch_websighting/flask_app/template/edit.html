@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Sighting</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="all">
+        <div>
+            <h1>{{ user.first_name }} is Editing a Sighting Report!</h1>
+            <div class="tab2">
+                <p><a href="/sighting/list" class="btn">Back to Sighting list</a></p>
+                <p><a href="/logout" class="btn">Logout</a></p>
+            </div>
+        </div>
+        <form action="/sighting/edit/{{ sighting.id }}" method="post">
+            {% with messages = get_flashed_messages(category_filter=['sighting_message']) %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="add_container">
+                <div class="box2">
+                    <input type="hidden" name="user_id" value="{{ sighting.user_id }}">
+                    <p>
+                        <label for="location">Location:</label>
+                        <input type="text" name="location" value="{{ sighting.location }}">
+                    </p>
+                    <p>
+                        <label for="description">What Happened:</label>
+                        <textarea type="text" name="description" value="{{ sighting.description }}"></textarea>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label for="date">Date of Sighting:</label>
+                        <input type="date" name="date" value="{{ sighting.date }}">
+                    </p>
+                    <p>
+                    <label for="num_of_sasquatches">Number of Sasquatches:</label>
+                    <input type="number" name="num_of_sasquatches" value="{{ sighting.num_of_sasquatches }}" class="num_of_sasquatches">
+                    </p>
+                </div>
+            </div>
+            <input type="submit" value="Submit" class="sub_btn">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

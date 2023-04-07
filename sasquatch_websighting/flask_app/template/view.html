@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Sighting</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="all">
+        <h1>{{ user.first_name }} is viewing {{ sighting.reporter.first_name }}'s Report!</h1>
+        <div class="tab2">
+            <p><a href="/sighting/list" class="btn">Back to sightings</a></p>
+            <p><a href="/logout" class="btn">Logout</a></p>
+        </div>
+        <div>
+
+        </div>
+        <div class="view_box">
+            <h2>Location of the sighting: {{ sighting.location }}</h2>
+            <h3>Posted by: {{ sighting.reporter.first_name }}</h3>
+            <div>
+                <p>What Happened:</p>
+                <p>{{ sighting.description }}</p>
+            </div>
+            <div>
+                <p>Number of Sasquatches</p>
+                <p>{{ sighting.num_of_sasquatches }}</p>
+            </div>
+            <div>
+                <p>Date of Sighting:</p>
+                <p> {{ sighting.date }}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

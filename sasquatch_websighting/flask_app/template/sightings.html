@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sighting List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="all">
+        <h1>Welcome {{ user.first_name }}</h1>
+        <div class="tab2">
+            <p><a href="/create" class="btn" id="createbtn">Report a Sighting</a></p>
+            <p><a href="/logout" class="btn">Logout</a></p>
+            <h3>All posted sightings:</h3>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    {% for sighting in sightings %}
+                    <p>Location: {{ sighting.location }}</p>
+                    <p> Number of Sasquatches: {{ sighting.num_of_sasquatches }}</p>
+                    <p>Reported By: {{ sighting.reporter.first_name }}</p>
+                    <p>
+                        Actions:
+                        <a href="/view/{{ sighting.id }}">View Report</a>
+                        {% if session['user_id'] == sighting.reporter.id %}
+                        -<a href="/edit/{{ sighting.id }}">Edit</a>-
+                        <a href="/destroy/{{ sighting.id }}">Delete</a>
+                        {% endif %}
+                    </p>
+                        ====================================================================
+                    {% endfor %}
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Sighting</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="all">
+        <h1>{{user.first_name }} is Adding a New Sighting Report!</h1>
+        <div class="tab2">
+            <p><a href="/sighting/list" class="btn">Back to sighting list</a></p>
+            <p><a href="/logout" class="btn">Logout</a></p>
+        </div>
+        <form action="/add/sighting" method="post">
+            {% with messages = get_flashed_messages(category_filter=['sighting_message']) %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="add_container">
+                <div class="box2">
+                    <p>
+                        <label for="location">Location:</label>
+                        <input type="text" name="location" >
+                    </p>
+                    <p>
+                        <label for="description">What Happened:</label>
+                        <textarea type="text" name="description"></textarea>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label for="date">Date of Sighting:</label>
+                        <input type="date" name="date">
+                    </p>
+                    <p>
+                        <label for="num_of_sasquatches">Number of Sasquatches:</label>
+                        <input type="number" name="num_of_sasquatches" class="num_of_sasquatches">
+                    </p>
+                </div>
+            </div>
+            <input type="submit" value="Submit" class="sub_btn">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
