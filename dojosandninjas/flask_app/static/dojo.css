@@ -1,0 +1,127 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.box1 {
+    margin: 50px;
+    padding: 50px;
+    background-color: lightblue;
+    border: 2px solid black;
+    height: 120px;
+    box-shadow: 2px 2px black;
+}
+
+.box2 {
+    margin: 50px;
+    background-color: lightcoral;
+    padding: 50px;
+    border: 2px solid black;
+    text-align: center;
+    height: 200px;
+    box-shadow: 2px 2px black;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.dojolist {
+    margin: 10px;
+}
+
+.addninja {
+    margin: 50px;
+    padding: 15px;
+    text-decoration: none;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-left: 1400px;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+}
+
+/* add_ninja.html */
+
+.form {
+    background-color: lightblue;
+    border: 2px solid black;
+    margin: 50px;
+    width: 500px;
+    margin-left: 1000px;
+    box-shadow: 2px 2px black;
+}
+.home {
+    margin: 50px;
+    padding: 15px;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    width: 80px;
+    text-align: center;
+    margin-left: 1000px;
+    text-decoration: none;
+}
+.submit {
+    margin: 10px;
+    padding: 8px;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+}
+
+p {
+    margin: 10px;
+}
+
+.ageinput {
+    width: 30px;
+}
+
+/* show_dojo.html */
+
+.title {
+    margin: 20px;
+    margin-left: 1000px;
+}
+
+.table {
+    border: 2px solid black;
+    margin: 50px;
+    margin-left: 1000px;
+    background-color: lightcoral;
+}
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: lightblue;
+}
+
+.home1 {
+    margin: 50px;
+    padding: 15px;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 1000px;
+}
