@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='counter.css') }}">
+</head>
+
+<body>
+    <div class="window">
+        <h1 class="title">Counter:</h1>
+        <h2 class="num">{{session['count']}}</h2>
+        <div class="buttons">
+            <a href="/" class="visit">Add Visit</a>
+            <a href="/reset" class="reset" onclick="">Reset</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
