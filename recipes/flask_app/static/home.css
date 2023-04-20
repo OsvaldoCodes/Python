@@ -1,0 +1,122 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.register {
+    background-color: lightblue;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+}
+
+.login {
+    background-color: lightcoral;
+    margin: 50px;
+    padding: 30px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+}
+
+.btn {
+    margin: 10px;
+    padding: 8px;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 20px;
+}
+
+p {
+    margin: 20px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: lightblue;
+}
+.table {
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.tab {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+#createbtn {
+    margin-left: 300px;
+}
+
+/* add.html */
+
+.box {
+    background-color: lightblue;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    width: 180px;
+    margin-left: 100px;
+    height: 150px;
+}
+
+.box2 {
+    background-color: lightblue;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    width: 350px;
+    margin-left: 100px;
+}
+
+.add_container {
+    display: flex;
+    margin-left: 500px;
+}
+.add_btn {
+    margin: 10px;
+    padding: 8px;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    text-decoration: none;
+    margin-left: 950px;
+}
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+.yes {
+    margin-left: 40px;
+}
+/* view.html */
+
+.view_box {
+    background-color: lightblue;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin-left: 300px;
+    width: 600px;
+}
