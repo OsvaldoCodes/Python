@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="all ">
+        <h1 class="welcome">Welcome to HomeLander!</h1>
+        <div class="img-container">
+            <img class="img1" src="static/logo.jpg" alt="Logo">
+        </div>
+        
+        <h3 class="nav2">Buy, Rent And Sell!</h3>
+        <div class="nav1">
+            <a href="/register_page" class="box1">Create Account</a>
+            <a href="/login_page" class="box1">Already a User?</a>
+        </div>
+        <div class="nav3">
+            <label class="nav3" for="img2">Follow Us:</label>
+            <img class="img2" src="static/socialmedia.jpg" alt="socialmedia">
+        </div>
+        
+    </div>
+</body>
+
+</html>

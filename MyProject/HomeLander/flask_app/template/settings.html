@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settigns Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="static/logo.jpg" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/home">Home</a></p>
+            <p><a class="reg-back-btn" href="/logout">Logout</a></p>
+        </div>
+        <div class="view-contact-us">
+            <h2 class="space">Settings</h2>
+            <p class="space"><a class="reg-back-btn" href="/change_password_page">Change Password</a></p>
+            <p class="space"><a class="reg-back-btn" href="/delete_account">Delete Account</a></p>
+            <!-- <p class="space"><a class="reg-back-btn" href="/dark_mode">Dark Mode</a></p> -->
+        </div>
+
+    </div>
+</body>
+
+</html>

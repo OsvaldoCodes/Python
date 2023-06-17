@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Listing Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="{{ url_for('static', filename='logo.jpg') }}" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/home">Home</a></p>
+            <p><a class="reg-back-btn" href="/contact_us">Contact Us</a></p>
+            <p><a class="reg-back-btn" href="/settings">Settings</a></p>
+            <p><a class="reg-back-btn" href="/logout">Logout</a></p>
+        </div>
+
+        <div class="view-listing">
+            {% if session['user_id'] == property.seller.id %}
+            <div class="view-nav1">
+                <a class="home-view-btn2" href="/edit/{{ property.id }}">Edit</a>
+                <a class="home-view-btn2" href="/view/destroy/{{ property.id }}">Delete</a>
+            </div>
+            
+            {% endif %}
+            <img src="{{ property.image}}" alt="">
+            <h1>{{property.address}}</h1>
+            <h2>{{property.city}}, {{property.state}}, {{property.zipcode}}</h2>
+            <h2>{{property.sqft}} sqft</h2>
+            <h3>Listed by: {{ property.seller.first_name }}</h3>
+            <h3>Phone Number: {{property.phone}}</h3>
+            <div>
+                <p> Build Date: {{property.build_date}}</p>
+            </div>
+            <div>
+                <p>Transaction: {{property.transaction}}</p>
+            </div>
+            <div>
+                <p> Type: {{property.type}}</p>
+            </div>
+            <div>
+                <h4>Description:</h4>
+                <p>{{property.description}}</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="static/logo.jpg" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/contact_us">Contact Us</a></p>
+            <p><a class="reg-back-btn" href="/settings">Settings</a></p>
+            <p><a class="reg-back-btn" href="/logout">Logout</a></p>
+        </div>
+
+        <div class="home-nav2">
+            <p><a class="home-nav2-btn" href="/my_listings">My Listings</a></p>
+            <p><a class="home-nav2-btn" href="/sell">Sell or Rent</a></p>
+        </div>
+        <h3 class="home-nav3">All Listings:</h3>
+        <div class="home-list">
+
+            <ul>
+                <li>
+                    {% for property in properties %}
+                    <div class="list-container">
+                        <div>{% if property.type == "House" %}
+                            <p><img class="icon" src="static/house_icon.jpg" alt="house-logo"></p>
+                            {% elif property.type == "Apartment" %}
+                            <p><img class="icon" src="static/apt_icon.jpg" alt="apt-logo"></p>
+                            {% elif property.type == "Other" %}
+                            <p><img class="icon" src="static/other_icon.jpg" alt="other-logo"></p>
+                            {% endif %}<p>
+                                <a class="home-view-btn" href="/view/{{ property.id }}">View</a>
+                            </p>
+                        </div>
+                        <div>
+                            
+                            <h3 class="space">{{property.address}}</h3>
+                            <p class="space">Transaction: {{ property.transaction }}</p>
+                            <p class="space">Type: {{ property.type }}</p>
+                            <p class="space">Price: ${{property.price }}</p>
+                            <p class="space">{{property.price }} sqft</p>
+                            <p class="space">Listed By: {% if session['user_id'] == property.seller.id %} You {% else %} {{property.seller.first_name }} {% endif %}</p>
+                            <p>File: {{property.image}}</p>
+                        </div>
+                    </div>
+                    ______________________________________________________________________________
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

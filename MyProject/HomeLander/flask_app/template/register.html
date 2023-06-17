@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="static/logo.jpg" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/">Back</a></p>
+        </div>
+        <h2 class="reg-nav2">Registration</h2>
+        <div class="reg-form">
+            
+            <form  class="form" action="/register" method="post">
+                {% with messages = get_flashed_messages(category_filter=['register_message']) %}
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <p>
+                    <input type="text" name="first_name" placeholder="First Name">
+                </p>
+                <p>
+                    <input type="text" name="last_name" placeholder="Last Name">
+                </p>
+                <p>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" name="dob" placeholder="00/00/0000">
+                </p>
+                <p>
+                    <input type="text" name="email" placeholder="Email">
+                </p>
+                <p>
+                    <input type="password" name="password" placeholder="Password">
+                </p>
+                <p>
+                    <input type="password" name="confirm" placeholder="Confirm Password">
+                </p>
+                <input type="submit" value="Submit" class="reg-btn">
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

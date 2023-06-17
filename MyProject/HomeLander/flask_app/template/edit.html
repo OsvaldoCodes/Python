@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Listing Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="{{ url_for('static', filename='logo.jpg') }}" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/home">Home</a></p>
+            <p><a class="reg-back-btn" href="/contact_us">Contact Us</a></p>
+            <p><a class="reg-back-btn" href="/settings">Settings</a></p>
+            <p><a class="reg-back-btn" href="/logout">Logout</a></p>
+        </div>
+        <h2 class="home-nav3">Edit Listing</h2>
+        <div class="reg-form">
+            <form class="form" action="/property/edit/{{ property.id }}" method="post">
+                {% with messages = get_flashed_messages(category_filter=['property_message']) %}
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input type="hidden" name="user_id" value="{{ property.user_id }}">
+                <p>
+                    <label for="image">Image:</label>
+                    <input type="file" name="image" accept="image/*">
+                </p>
+                <p>
+                    <label for="transaction">Transaction:</label>
+                    <select name="transaction" id="transaction" value="{{property.transaction}}">
+                        <option value="Sale">Sale</option>
+                        <option value="Rent">Rent</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="type">Type of Property:</label>
+                    <select name="type" id="type" value="{{property.type}}">
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="build_date">Built In:</label>
+                    <input type="date" name="build_date" value="{{property.build_date}}">
+                </p>
+                <p>
+                    <input type="number" name="price" value="{{property.price}}" placeholder="Price">
+                </p>
+                <p>
+                    <input type="number" name="sqft" value="{{property.sqft}}" placeholder="Square Feet">
+                </p>
+                <p>
+                    <input type="text" name="address" value="{{property.address}}" placeholder="Address">
+                </p>
+                <p>
+                    <input type="text" name="city" value="{{property.city}}" placeholder="City">
+                </p>
+                <p>
+                    <input type="text" name="state" value="{{property.state}}" placeholder="State">
+                </p>
+                <p>
+                    <input type="number" name="zipcode" value="{{property.zipcode}}" placeholder="ZIP Code">
+                </p>
+                <p>
+                    <input type="number" name="phone" value="{{property.phone}}" placeholder="Phone #">
+                </p>
+                <p>
+                    <textarea name="description" cols="25" rows="5" value="{{property.description}}" placeholder="Description"></textarea>
+                </p>
+                <input type="submit" value="Submit" class="reg-btn">
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

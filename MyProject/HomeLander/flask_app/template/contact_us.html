@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div>
+        <div class="reg-nav1">
+            <label for="title"><img class="reg-img1" src="static/logo.jpg" alt="logo"></label>
+            <h1 class="title">HomeLander</h1>
+            <p><a class="reg-back-btn" href="/home">Home</a></p>
+            <p><a class="reg-back-btn" href="/logout">Logout</a></p>
+        </div>
+        <div class="view-contact-us">
+            <h2 class="space">Contact Us</h2>
+            <h3 class="space">Email: homelander@example.com</h3>
+            <h3 class="space">Phone Number: 123-456-7890</h3>
+            <h3 class="space">Address: 100 N Example Blvd, City, ST, 10000</h3>
+            <h3 class="space">Hours of Operation: Mon-Fri 8:00 AM to 5:00 PM PT</h3>
+
+        </div>
+        <div class="nav3">
+            <label class="nav3" for="img2">Follow Us:</label>
+            <img class="img2" src="static/socialmedia.jpg" alt="socialmedia">
+        </div>
+    </div>
+</body>
+
+</html>
